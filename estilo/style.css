@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+
+/*
+
+    criando variaveis para as paletas de cores do site e p/fontes
+
+*/
+
+:root {
+
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #478f67;
+    --cor3: #21814c;
+    --cor4: #105c37;
+    --cor5: #081a0f;
+
+    --font-padrao: arial,verdana,helvetica,sans-serif;
+    --font-destaque: 'Bebas Neue', 'cursive';
+    --font-android:'android','cursive';
+}
+
+/*
+    (*) quando quero configurar todo site//CONFIGURANDO VARIOS ELENTOS DE UMA ÚNICA VEZ:
+    abaixo tiramos as margen e os padding de todo site
+*/
+
+* { 
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body {
+    background-color:var(--cor0);
+    font-family: var(--font-padrao);
+}
+
+a.externo::after {
+    content: '\00A0🔗';/*codigo p/dá um espaço antes do simbolo do link*/
+}
+
+    
+
+
+header {
+
+    background-image:linear-gradient(to bottom,var(--cor3),var(--cor5)); /*degradê*/
+    min-height:150px;
+    text-align:center;
+    padding-top:40px;
+    
+}
+
+header > h1 {
+
+    color:white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow:2px 2px 0px rgba(0, 0, 0, 0.267);
+    
+}
+
+header > p {
+    
+    font-family: var(--font-padrao);
+    font-size: 1.2em;
+    color:white;
+    max-width: 400px;/*para ficar dentro da largura do h1*/
+    padding-left: 10px;/*coloca esse parâmetro p/quando reduzir o tmanho na tela ficar c/ espaços nas laterais.*/
+    padding-right: 10px;
+    margin: auto;
+    padding-bottom: 30px;
+    text-shadow:2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+nav {
+    
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.092);
+}
+
+nav > a {
+
+    color:var(--cor1);
+    padding:10px;
+    text-decoration: none; /*tira o sublinhado*/
+    font-weight: bold;/*negrito*/
+    
+}
+
+nav > a:hover {
+    background-color:var(--cor2);
+    color: var(--cor5);
+    border-radius: 10px;
+    border: solid rgba(0, 0, 255, 0.322);
+}
+
+main {
+
+    min-width: 300px; 
+    max-width: 1000px;
+    margin: auto; /*para quando for p/tela grande a img ficar centralizada e nao aumentar*/
+    margin-bottom: 30px; /*para da uma separar o conteudo principal do rodapé*/
+    padding: 20px; 
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+main h1 {
+
+    color:var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.8em;
+
+}
+
+main h2 {
+
+    font-family: var(--font-android);
+    color:var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1),transparent);
+    text-indent: 20px;
+}
+
+main p {  /* criando espaços nos paragrafos*/
+    margin: 15px 0px; /* c/ 2valores a siguinifica 15px encima e baixo e 0px direita e esquerda*/
+    text-align: justify;
+    text-indent: 30px; /*espaço no inicio do paragrafo*/
+    font-size: 1em;
+    line-height: 2em; /*espaço entre as linhas*/
+}
+main strong {
+    color: var(--cor4);
+    font-weight:bold;
+    
+}
+
+main a {
+
+    text-decoration: none; /*tira o sublinhado*/
+    font-weight: bold;
+    color:var(--cor5);
+    background-color: var(--cor1);
+    padding: 8px 10px; /*em cima e em baixo e nas laterais*/
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor3);
+}
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    margin: auto;
+    display:block; /* quando é imagem para a margim auto(centralizar funcionar tem q dá o display block*/
+}
+
+div.video {
+    background-color: var(--cor5);/*criei esse background para destacar o video*/
+    margin: 0px -20px 30px;
+    padding: 20px;
+    padding-bottom: 56.5%; /*tira o espaço preto ao lado do video em execução*/
+    position: relative;
+    }
+
+div.video > iframe {
+    position: absolute;
+    top:5%;
+    left:5%;
+    width:90% ;
+    height:90% ;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius:10px; /* CURVATURA NA BORDA */ 
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+aside > h3 {
+    background-color:var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px; /*margin negativa a margin cresce pra fora*/
+    border-radius: 10px 10px 0px 0px; /*tive que refazer o border-radius que havia perdido com a margin negativa*/
+
+}
+
+aside > ul {
+    list-style-type: '✔️\00A0\00A0';
+    list-style-position: inside; /* POSIÇÃO DAS LISTAS PARA DENTRO(INSIDE)*/
+    columns: 2; /* DIVIDE A LISTA EM 2 COLUNAS*/
+
+}
+
+
+footer {
+
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    
+}
